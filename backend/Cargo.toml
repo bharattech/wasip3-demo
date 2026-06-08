@@ -1,0 +1,11 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen = { workspace = true }
+oxiwhisper = "0.1.1"

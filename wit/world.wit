@@ -1,0 +1,14 @@
+package wasmcloud:p3-multi-comps-demo@0.1.0;
+
+interface middleware {
+    invoke: func() -> result<string, string>;
+}
+
+world frontend {
+    import wasi:http/types@0.3.0-rc-2026-03-15;
+    import wasi:clocks/types@0.3.0-rc-2026-03-15;
+    import wasi:random/random@0.3.0-rc-2026-03-15;
+    import middleware;
+    
+    export wasi:http/handler@0.3.0-rc-2026-03-15;
+}

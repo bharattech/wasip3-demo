@@ -1,0 +1,15 @@
+package wasmcloud:p3-multi-comps-demo@0.1.0;
+
+interface receiver {
+    invoke: func() -> result<string, string>;
+}
+
+interface middleware {
+    invoke: func() -> result<string, string>;
+}
+
+world component {
+    import wasi:logging/logging@0.1.0-draft;
+    import receiver;
+    export middleware;
+}

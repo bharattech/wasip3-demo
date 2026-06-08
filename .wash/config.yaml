@@ -1,0 +1,17 @@
+version: 2.0.2
+
+build:
+  command: "cargo build --target wasm32-wasip2 --release"
+  component_path: "target/wasm32-wasip2/release/frontend.wasm"
+  
+dev:
+  wasip3: true
+  address: "0.0.0.0:8000"
+  components:
+    - name: middleware
+      file: target/wasm32-wasip2/release/middleware.wasm
+    - name: backend
+      file: target/wasm32-wasip2/release/backend.wasm      
+  volumes:
+    - host_path: ./testdata
+      guest_path: /data

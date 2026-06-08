@@ -1,0 +1,8 @@
+[workspace]
+resolver = "3"
+package.edition = "2024"
+package.authors = ["The wasmCloud Team"]
+members = ["frontend", "middleware", "backend"]
+
+[workspace.dependencies]
+wit-bindgen = { version = "*", features = ["async-spawn", "inter-task-wakeup"] }
