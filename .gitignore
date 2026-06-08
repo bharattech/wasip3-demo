@@ -9,6 +9,7 @@ middleware/target/
 target/
 
 # Test data (unless it's small test fixtures)
+testdata/
 testdata/*.bin
 testdata/*.gguf
 testdata/*.onnx
