@@ -1,4 +1,26 @@
-/target
-/frontend/target/
-testdata
-.git
+# Add these lines to .gitignore
+cat >> .gitignore << 'EOF'
+
+# Build artifacts
+frontend/target/
+backend/target/
+middleware/target/
+*/target/
+target/
+
+# Test data (unless it's small test fixtures)
+testdata/*.bin
+testdata/*.gguf
+testdata/*.onnx
+
+# Rust build artifacts
+*.rlib
+*.rmeta
+*.so
+*.dylib
+*.dSYM/
+
+# IDE
+.vscode/
+.idea/
+EOF
